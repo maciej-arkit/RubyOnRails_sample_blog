@@ -1,0 +1,28 @@
+<h1>See all your articles in single place!</h1>
+
+<%= link_to 'New Article', new_article_path %>
+
+<table border="1">
+ <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Action</th>
+ </tr>
+<% @articles.each do |article| %>
+<tr>
+<td>
+<%= article.title %>
+</td>
+<td>
+<%= article.text %>
+</td>
+<td>
+	<%= link_to 'Show', article_path(article) %>
+	<%= link_to 'Edit', edit_article_path(article) %>
+	<%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure to remove article #{article.id}?"} %>
+</td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to 'Home', controller: 'welcome' %>

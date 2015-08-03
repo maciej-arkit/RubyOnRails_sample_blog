@@ -1,0 +1,11 @@
+	<div style="background-color: lightgray;">
+	<p>
+		<b>Commenter:</b>
+		<%= comment.commenter %>
+	</p>
+	<p>
+	 	<b>Comment:</b>
+	 	<%= comment.body %>
+	 </p>
+	 <%= link_to 'Delete', [comment.article, comment], method: :delete, data: {confirm: 'Are you sure you want to remove this comment?'} %>
+	 </div>
